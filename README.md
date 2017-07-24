@@ -1,8 +1,5 @@
 # Datadog
 
-Master: [![Build Status](https://travis-ci.org/sansible/datadog.svg?branch=master)](https://travis-ci.org/sansible/datadog)
-Develop: [![Build Status](https://travis-ci.org/sansible/datadog.svg?branch=develop)](https://travis-ci.org/sansible/datadog)
-
 * [ansible.cfg](#ansible-cfg)
 * [Installation and Dependencies](#installation-and-dependencies)
 * [Tags](#tags)
@@ -32,12 +29,12 @@ hash_behaviour = merge
 
 ## Installation and Dependencies
 
-To install run `ansible-galaxy install sansible.datadog` or add this to your
+To install run `ansible-galaxy install cloudposse.ansible-datadog` or add this to your
 `roles.yml`.
 
 ```YAML
-- name: sansible.datadog
-  version: v1.1
+- name: cloudposse.ansible-datadog
+  version: origin/master
 ```
 
 and run `ansible-galaxy install -p ./roles -r roles.yml`
@@ -47,8 +44,6 @@ and run `ansible-galaxy install -p ./roles -r roles.yml`
 
 ## Tags
 
-This role uses one tag: **build**
-
 * `build` - Installs Datadog and all it's dependencies.
 * `configure` - Configures datadog and install integrations
 
@@ -57,7 +52,7 @@ This role uses one tag: **build**
 
 ## Integrations
 
-The `datadog/templates/conf.d` directory contains the implemented integrations. The majority of them are self explanatory.
+The `ansible-datadog/templates/conf.d` directory contains the implemented integrations. The majority of them are self explanatory.
 
 #### TCP Check
 
@@ -65,7 +60,7 @@ Sample data structure for TCP Check integration.
 
 ```
 roles:
-  - role: sansible.datadog
+  - role: ansible-datadog
     datadog:
       integrations:
         tcp_check:
@@ -95,7 +90,7 @@ To install:
   hosts: "somehost"
 
   roles:
-    - role: sansible.datadog
+    - role: ansible-datadog
 ```
 
 Setup Datadog with some integrations and tags:
@@ -105,7 +100,7 @@ Setup Datadog with some integrations and tags:
   hosts: "somehost"
 
   roles:
-    - role: sansible.datadog
+    - role: ansible-datadog
       datadog:
         integrations:
           php_fpm: { }
@@ -134,7 +129,7 @@ datadog:
     - vars/dev/vars.yml
 
   roles:
-    - role: sansible.datadog
+    - role: ansible-datadog
 ```
 
 **Note** This behaviour requires hash_behaviour to be set to merge.
@@ -151,7 +146,7 @@ another role:
     - vars/dev/vars.yml
 
   roles:
-    - role: sansible.datadog
+    - role: ansible-datadog
       datadog:
         autostart_agent: no
 
@@ -177,7 +172,7 @@ datadog:
     - vars/dev/vars.yml
 
   roles:
-    - role: sansible.datadog
+    - role: ansible-datadog
       datadog:
         tags:
           - some_app
@@ -201,7 +196,8 @@ Disable Datadog service (useful for disabling in some environments):
   hosts: "somehost"
 
   roles:
-    - role: sansible.datadog
+    - role: ansible-datadog
       datadog:
         enabled: false
 ```
+# datadog

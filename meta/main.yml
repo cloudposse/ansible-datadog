@@ -1,34 +1,16 @@
 ---
+
+dependencies: [ ]
+
 galaxy_info:
-  author: 'Cloudposse'
-  description: Datadog agent and modules installation
+  author: David Reed
+  description: Datadog agent installation
   license: MIT
-  min_ansible_version: 1.6
+  min_ansible_version: 2.0
   platforms:
     - name: Ubuntu
       versions:
-        - lucid
-        - maverick
-        - natty
-        - oneiric
         - precise
-        - quantal
-        - raring
-        - saucy
         - trusty
-        - utopic
-        - vivid
-        - xenial
-    - name: Debian
-      versions:
-        - squeeze
-        - wheezy
-        - jessie
-    - name: EL
-      versions:
-        - 7
-        - 6
-        - 5
   categories:
-    - monitoring
-dependencies: []
+    - development

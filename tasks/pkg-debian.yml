@@ -23,13 +23,13 @@
 
 - name: Ensure pinned version of Datadog agent is installed
   apt:
-    name: datadog-agent={{ datadog_agent_version }}
+    name: datadog-agent={{ deb_agent_version }}
     state: present
     force: "{{ datadog_agent_allow_downgrade }}"
-  when: datadog_agent_version != ""
+  when: deb_agent_version != ""
 
 - name: Ensure Datadog agent is installed
   apt:
     name: datadog-agent
     state: latest
-  when: datadog_agent_version == ""
+  when: deb_agent_version == ""

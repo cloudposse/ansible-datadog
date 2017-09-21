@@ -13,12 +13,12 @@
 
 - name: Install pinned datadog-agent package
   yum:
-    name: datadog-agent-{{ datadog_agent_version }}
+    name: datadog-agent-{{ rpm_agent_version }}
     state: present
-  when: datadog_agent_version != ""
+  when: rpm_agent_version != ""
 
 - name: Install latest datadog-agent package
   yum:
     name: datadog-agent
     state: latest
-  when: datadog_agent_version == ""
+  when: rpm_agent_version == ""

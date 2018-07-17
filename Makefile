@@ -2,6 +2,10 @@
 .DEFAULT_GOAL := help
 .PHONY: help
 
+SHELL := /bin/bash
+
+-include $(shell curl -sSL -o .build-harness "https://git.io/build-harness"; echo .build-harness)
+
 all: test vagrant_halt clean
 
 ## Run tests on any file change
@@ -36,7 +40,7 @@ lint:
 	find defaults/ meta/ tasks/ templates/ -name "*.yml" | xargs -I{} ansible-lint {}
 
 ## Clean up
-clean:
+clean::
 	rm -rf tests/sansible.*
 	cd tests/vagrant && vagrant destroy
 

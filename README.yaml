@@ -13,6 +13,12 @@ name: ansible-datadog
 # License of this project
 license: "MIT"
 
+# Copyrights
+copyrights:
+  - name: "sansible"
+    url: "https://github.com/sansible"
+    year: "2018"
+
 # Canonical GitHub repo
 github_repo: cloudposse/ansible-datadog
 
@@ -23,7 +29,7 @@ badges:
     url: "https://travis-ci.org/cloudposse/ansible-datadog"
   - name: "Latest Release"
     image: "https://img.shields.io/github/release/cloudposse/ansible-datadog.svg"
-    url: "https://travis-ci.org/cloudposse/ansible-datadog/releases"
+    url: "https://github.com/cloudposse/ansible-datadog/releases/latest"
   - name: "Slack Community"
     image: "https://slack.cloudposse.com/badge.svg"
     url: "https://slack.cloudposse.com"
@@ -47,8 +53,7 @@ description: |-
   CPU or Memory usage alarms erroneously.
 
 
-
-
+usage: |-
   ## ansible.cfg
 
   This role is designed to work with merge "hash_behaviour". Make sure your
@@ -231,6 +236,11 @@ examples: |-
         datadog:
           enabled: false
   ```
+
+references:
+  - name: "datadog"
+    description: "See https://github.com/sansible/sansible for more information"
+    url: "https://github.com/sansible/datadog"
 
 # Contributors to this project
 contributors:
